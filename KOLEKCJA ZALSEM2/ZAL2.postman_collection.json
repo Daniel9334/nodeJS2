@@ -1,0 +1,352 @@
+{
+	"info": {
+		"_postman_id": "122ac5a1-73b0-4a76-9dba-b7bc880b5233",
+		"name": "ZAL2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01",
+			"item": [
+				{
+					"name": "HEARTBEAT",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/heartbeat",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"heartbeat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NEW AD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"zwierze\",\r\n  \"description\": \"12, używane\",\r\n  \"author\": \"Adam\",\r\n  \"category\": \"rower\",\r\n  \"tags\": [\"rower\", \"sport\"],\r\n  \"price\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/ads",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ads"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ONE AD",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "text/plain",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "text/html",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/ads/6667676fa1d8206e51bb3ac8",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ads",
+								"6667676fa1d8206e51bb3ac8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL ADS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/ads",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ads"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL AD",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: 4324",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/ads/666784353c588dd006830a50",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ads",
+								"666784353c588dd006830a50"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RELOAD AD",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: 4324",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Sprzedam mieszkanie\",\r\n  \"description\": \"2letnie, używane\",\r\n  \"author\": \"Bolek\",\r\n  \"category\": \"nieruchomości\",\r\n  \"tags\": [\"mieszkanie\", \"lokum\"],\r\n  \"price\": 250000\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/ads/665e256ff27ea150ada2c55a",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ads",
+								"665e256ff27ea150ada2c55a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET SEARCH AD",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/ads/search?minPrice=5&maxPrice=1500",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ads",
+								"search"
+							],
+							"query": [
+								{
+									"key": "minPrice",
+									"value": "5"
+								},
+								{
+									"key": "maxPrice",
+									"value": "1500"
+								},
+								{
+									"key": "title",
+									"value": "Sprzedam mieszkanie",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN USERS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \"username\": \"user1\", \"password\": \"password1\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/users/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "USER TOKEN NEW AD",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIxIiwiaWF0IjoxNzE4MDU4NTIyLCJleHAiOjE3MTgwNjIxMjJ9.SP9Db2x69WlmlzvckLL-Cwx_gF9TC0yjPC7iNq3h3bQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"DUZY DOM\",\r\n  \"description\": \"123, używane\",\r\n  \"author\": \"Adam\",\r\n  \"category\": \"motoryzacja\",\r\n  \"tags\": [\"auto\", \"samochód\"],\r\n  \"price\": 300\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/ads",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ads"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIxIiwiaWF0IjoxNzE4MDU2MDYwLCJleHAiOjE3MTgwNTk2NjB9.IKVl_vMiaXjD5sV9ocWYA71y8p0SIA_NO1rAxeMTMdU",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "USER DEL AD",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIxIiwiaWF0IjoxNzE4MDU4NTIyLCJleHAiOjE3MTgwNjIxMjJ9.SP9Db2x69WlmlzvckLL-Cwx_gF9TC0yjPC7iNq3h3bQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/ads/6667850c23c5066cd5396dc1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ads",
+								"6667850c23c5066cd5396dc1"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST ERROR",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/search?testError=true",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "testError",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
